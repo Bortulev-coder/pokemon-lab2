@@ -1,0 +1,11 @@
+Shellder Rest test loses 20 hit points.
+Shellder Rest test increases defense.
+Shellder Rest test is poisoned
+Shellder Rest test restores 20 hit points.
+Shellder Rest test is sleeping
+Shellder Rest test increases defense.
+Shellder Rest test increases attack.
+Phione Ring test loses 30 hit points.
+Phione Ring test restores 9 hit points.
+Phione Ring test restores 9 hit points.
+PASS: 115 checks

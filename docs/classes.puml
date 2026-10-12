@@ -1,0 +1,59 @@
+@startuml
+hide empty members
+skinparam classAttributeIconSize 0
+class Main <<final>> {
+  - Main()
+  + {static} main(args : String[]) : void
+}
+class Battle <<library>>
+class Pokemon <<library>>
+abstract class Move <<library>>
+abstract class DamageMove <<library>>
+class PhysicalMove <<library>>
+class SpecialMove <<library>>
+class StatusMove <<library>>
+class Phione <<final>>
+class Shellder
+class Cloyster <<final>>
+class Lotad
+class Lombre
+class Ludicolo <<final>>
+class IceBeam <<final>>
+class AquaRing <<final>> {
+  - active : boolean
+}
+class DazzlingGleam <<final>>
+class Blizzard <<final>>
+class Rest <<final>>
+class Withdraw <<final>>
+class HydroPump <<final>>
+class PoisonJab <<final>>
+class Swagger <<final>>
+class Bubble <<final>>
+class FocusBlast <<final>>
+Pokemon <|-- Phione
+Pokemon <|-- Shellder
+Shellder <|-- Cloyster
+Pokemon <|-- Lotad
+Lotad <|-- Lombre
+Lombre <|-- Ludicolo
+Move <|-- DamageMove
+Move <|-- StatusMove
+DamageMove <|-- PhysicalMove
+DamageMove <|-- SpecialMove
+PhysicalMove <|-- PoisonJab
+SpecialMove <|-- IceBeam
+SpecialMove <|-- DazzlingGleam
+SpecialMove <|-- Blizzard
+SpecialMove <|-- HydroPump
+SpecialMove <|-- Bubble
+SpecialMove <|-- FocusBlast
+StatusMove <|-- AquaRing
+StatusMove <|-- Rest
+StatusMove <|-- Withdraw
+StatusMove <|-- Swagger
+Main ..> Battle : creates and runs
+Main ..> Pokemon : creates 6 species
+Battle o-- "6" Pokemon : two teams
+Pokemon *-- "2..4" Move : this variant
+@enduml
