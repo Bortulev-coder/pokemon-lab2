@@ -1,0 +1,72 @@
+@startuml
+skinparam classAttributeIconSize 0
+skinparam shadowing false
+
+package "ru.ifmo.se.pokemon" {
+  class Pokemon
+  class Battle
+  class PhysicalMove
+  class SpecialMove
+  class StatusMove
+}
+
+package "lab2.pokemons" {
+  class Phione <<final>>
+  class Shellder
+  class Cloyster <<final>>
+  class Lotad
+  class Lombre
+  class Ludicolo <<final>>
+}
+
+package "lab2.moves" {
+  class IceBeam <<final>>
+  class AquaRing <<final>>
+  class DazzlingGleam <<final>>
+  class Blizzard <<final>>
+  class Rest <<final>>
+  class Withdraw <<final>>
+  class HydroPump <<final>>
+  class PoisonJab <<final>>
+  class Swagger <<final>>
+  class Bubble <<final>>
+  class FocusBlast <<final>>
+}
+
+Pokemon <|-- Phione
+Pokemon <|-- Shellder
+Shellder <|-- Cloyster
+Pokemon <|-- Lotad
+Lotad <|-- Lombre
+Lombre <|-- Ludicolo
+
+SpecialMove <|-- IceBeam
+StatusMove <|-- AquaRing
+SpecialMove <|-- DazzlingGleam
+SpecialMove <|-- Blizzard
+StatusMove <|-- Rest
+StatusMove <|-- Withdraw
+SpecialMove <|-- HydroPump
+PhysicalMove <|-- PoisonJab
+StatusMove <|-- Swagger
+SpecialMove <|-- Bubble
+SpecialMove <|-- FocusBlast
+
+Phione --> IceBeam
+Phione --> AquaRing
+Phione --> DazzlingGleam
+Phione --> Blizzard
+
+Shellder --> Rest
+Shellder --> Withdraw
+Shellder --> HydroPump
+Cloyster --> PoisonJab
+
+Lotad --> Blizzard
+Lotad --> Swagger
+Lombre --> Bubble
+Ludicolo --> FocusBlast
+
+Battle --> Pokemon
+@enduml
+
