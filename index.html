@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Интерактивная UML-диаграмма лабораторной работы №2 по программированию, вариант 5678.">
+  <title>UML · Pokémon Lab 2</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="ambient ambient-a" aria-hidden="true"></div>
+  <div class="ambient ambient-b" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="К началу страницы">
+      <span class="brand-mark"><span></span></span>
+      <span>POKÉMON / UML</span>
+    </a>
+    <nav aria-label="Основная навигация">
+      <a href="#diagram">Диаграмма</a>
+      <a href="#legend">Обозначения</a>
+      <a href="#structure">Структура</a>
+    </nav>
+    <span class="variant-badge">Вариант 5678</span>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="eyebrow"><span></span> Лабораторная работа №2 · Java / ООП</div>
+      <h1>Архитектура проекта<br><em>в одной UML-схеме</em></h1>
+      <p class="hero-copy">Интерактивная карта классов показывает, как программа использует библиотеку <code>Pokemon.jar</code>, какие покемоны связаны наследованием и от каких базовых классов происходят атаки.</p>
+      <div class="hero-actions">
+        <a class="button primary" href="#diagram">Открыть диаграмму <span>↓</span></a>
+        <a class="button ghost" href="class-diagram.puml" download>Скачать PlantUML</a>
+      </div>
+      <div class="metrics" aria-label="Сводка проекта">
+        <article><strong>6</strong><span>классов<br>покемонов</span></article>
+        <article><strong>12</strong><span>классов<br>атак</span></article>
+        <article><strong>3</strong><span>ветви<br>наследования</span></article>
+        <article><strong>1</strong><span>внешняя<br>библиотека</span></article>
+      </div>
+    </section>
+
+    <section id="diagram" class="diagram-section">
+      <div class="section-heading">
+        <div>
+          <span class="section-index">01 / ДИАГРАММА</span>
+          <h2>Интерактивная UML-модель</h2>
+        </div>
+        <p>Нажмите на любой класс, чтобы увидеть его роль. Масштабируйте колёсиком мыши или кнопками; перетаскивайте поле, удерживая левую кнопку.</p>
+      </div>
+
+      <div class="diagram-shell">
+        <div class="diagram-toolbar" role="toolbar" aria-label="Инструменты диаграммы">
+          <label class="search-wrap">
+            <span class="sr-only">Найти класс</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"></circle><path d="m16 16 4 4"></path></svg>
+            <input id="classSearch" type="search" placeholder="Найти класс…" autocomplete="off">
+          </label>
+          <div class="tool-group">
+            <button id="zoomOut" type="button" title="Уменьшить" aria-label="Уменьшить">−</button>
+            <output id="zoomValue" aria-live="polite">38%</output>
+            <button id="zoomIn" type="button" title="Увеличить" aria-label="Увеличить">+</button>
+            <button id="fitDiagram" type="button">Вписать</button>
+            <button id="fullScreen" type="button">На весь экран</button>
+            <button id="printPage" type="button">PDF / печать</button>
+          </div>
+        </div>
+
+        <div class="diagram-layout">
+          <aside class="navigator" aria-label="Разделы диаграммы">
+            <span class="navigator-title">Быстрый переход</span>
+            <button type="button" data-focus-section="external"><i class="dot blue"></i><span><strong>Внешняя библиотека</strong><small>Pokemon.jar</small></span></button>
+            <button type="button" data-focus-section="pokemons"><i class="dot coral"></i><span><strong>Покемоны</strong><small>lab2.pokemons</small></span></button>
+            <button type="button" data-focus-section="moves"><i class="dot mint"></i><span><strong>Атаки</strong><small>lab2.moves</small></span></button>
+            <div class="navigator-hint"><kbd>колесо</kbd><span>масштаб</span><kbd>drag</kbd><span>перемещение</span></div>
+          </aside>
+
+          <div class="viewport" id="viewport" tabindex="0" aria-label="Интерактивная UML-диаграмма">
+            <div class="diagram-stage" id="diagramStage">
+              <svg class="edges" id="edges" viewBox="0 0 1880 3380" aria-hidden="true">
+                <defs>
+                  <marker id="inheritanceArrow" markerWidth="16" markerHeight="16" refX="14" refY="8" orient="auto" markerUnits="userSpaceOnUse">
+                    <path d="M15 8 1 1v14z" fill="#101a2a" stroke="#85a5c9" stroke-width="1.5"></path>
+                  </marker>
+                  <marker id="dependencyArrow" markerWidth="13" markerHeight="13" refX="11" refY="6.5" orient="auto" markerUnits="userSpaceOnUse">
+                    <path d="M1 1 11 6.5 1 12" fill="none" stroke="#7186a0" stroke-width="1.7"></path>
+                  </marker>
+                </defs>
+              </svg>
+              <div class="package package-external" data-section="external">
+                <div class="package-label"><span>ВНЕШНЯЯ БИБЛИОТЕКА</span><strong>ru.ifmo.se.pokemon</strong></div>
+                <div class="package-number">01</div>
+              </div>
+              <div class="package package-pokemons" data-section="pokemons">
+                <div class="package-label"><span>ПАКЕТ ПРОЕКТА</span><strong>lab2.pokemons</strong></div>
+                <div class="package-number">02</div>
+              </div>
+              <div class="package package-moves" data-section="moves">
+                <div class="package-label"><span>ПАКЕТ ПРОЕКТА</span><strong>lab2.moves</strong></div>
+                <div class="package-number">03</div>
+                <div class="subgroup physical-group"><span>Физическая атака</span></div>
+                <div class="subgroup special-group"><span>Специальные атаки</span></div>
+                <div class="subgroup status-group"><span>Статусные атаки</span></div>
+              </div>
+              <div id="nodes"></div>
+            </div>
+            <div class="viewport-corner">UML 2.x · CLASS DIAGRAM</div>
+          </div>
+
+          <aside class="inspector" id="inspector" aria-live="polite">
+            <span class="inspector-label">Выбранный элемент</span>
+            <div class="inspector-icon" id="inspectorIcon">U</div>
+            <h3 id="inspectorTitle">Как пользоваться</h3>
+            <code id="inspectorPackage">UML-диаграмма</code>
+            <p id="inspectorText">Выберите класс на схеме. Здесь появится простое объяснение его роли, наследования и основных методов.</p>
+            <div id="inspectorRelations" class="relations"></div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section id="legend" class="content-section">
+      <div class="section-heading compact">
+        <div>
+          <span class="section-index">02 / ОБОЗНАЧЕНИЯ</span>
+          <h2>Как читать UML</h2>
+        </div>
+        <p>Каждая фигура и линия имеет строгое значение. Цвет помогает ориентироваться, но смысл задаётся нотацией.</p>
+      </div>
+      <div class="legend-grid">
+        <article class="legend-card">
+          <div class="legend-visual class-sample"><b>ClassName</b><span>+ publicMethod()</span><span># protectedMethod()</span></div>
+          <h3>Прямоугольник — класс</h3>
+          <p>Верхняя часть содержит имя, ниже перечислены операции. Знак <code>+</code> означает <code>public</code>, <code>#</code> — <code>protected</code>, <code>−</code> — <code>private</code>.</p>
+        </article>
+        <article class="legend-card">
+          <div class="legend-visual line-sample solid"><span></span><i></i></div>
+          <h3>Наследование</h3>
+          <p>Сплошная линия с пустым треугольником направлена к родителю. Например, <code>Cloyster → Shellder</code>.</p>
+        </article>
+        <article class="legend-card">
+          <div class="legend-visual line-sample dashed"><span></span><i></i></div>
+          <h3>Зависимость</h3>
+          <p>Пунктир показывает, что один класс использует другой: создаёт объект, принимает его или вызывает его методы.</p>
+        </article>
+        <article class="legend-card">
+          <div class="stereotypes"><span>«abstract»</span><span>«final»</span><span>«external»</span></div>
+          <h3>Стереотипы</h3>
+          <p><code>abstract</code> — основа без прямых объектов; <code>final</code> — наследование запрещено; <code>external</code> — класс находится в подключённой библиотеке.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="structure" class="content-section structure-section">
+      <div class="section-heading compact">
+        <div>
+          <span class="section-index">03 / ЛОГИКА</span>
+          <h2>Три уровня модели</h2>
+        </div>
+      </div>
+      <div class="story-list">
+        <article><span>01</span><div><h3>Библиотека задаёт правила</h3><p><code>Pokemon</code>, <code>Move</code> и <code>Battle</code> уже реализованы в <code>Pokemon.jar</code>. Проект не изменяет их, а расширяет через наследование.</p></div></article>
+        <article><span>02</span><div><h3>Классы покемонов задают характеристики</h3><p>Конструктор каждого вида вызывает родительский конструктор, назначает типы, базовые параметры и набор доступных атак.</p></div></article>
+        <article><span>03</span><div><h3>Классы атак задают поведение</h3><p>Физические, специальные и статусные атаки наследуются от разных базовых классов и при необходимости переопределяют эффекты.</p></div></article>
+      </div>
+      <div class="callout"><span>Главная идея ООП</span><strong>Мы повторно используем готовую модель библиотеки и добавляем только особенности своего варианта.</strong></div>
+    </section>
+  </main>
+
+  <footer>
+    <div><strong>Александр Бортулев</strong><span>O3143 · НОЦ инфохимии · 2026</span></div>
+    <p>Лабораторная работа №2 · вариант 5678</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

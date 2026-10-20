@@ -1,0 +1,62 @@
+@startuml
+title Лабораторная работа №2 — UML классов (вариант 5678)
+skinparam classAttributeIconSize 0
+skinparam linetype ortho
+hide empty fields
+
+package "ru.ifmo.se.pokemon <<external>>" {
+  class Battle <<external>>
+  abstract class Pokemon <<external>>
+  abstract class Move <<external>>
+  abstract class PhysicalMove <<external>>
+  abstract class SpecialMove <<external>>
+  abstract class StatusMove <<external>>
+  class Effect <<external>>
+  enum Type <<external>>
+  enum Stat <<external>>
+  enum Status <<external>>
+  Move <|-- PhysicalMove
+  Move <|-- SpecialMove
+  Move <|-- StatusMove
+}
+
+package lab2.pokemons {
+  class Phione <<final>>
+  class Shellder
+  class Cloyster <<final>>
+  class Lotad
+  class Lombre
+  class Ludicolo <<final>>
+  Pokemon <|-- Phione
+  Pokemon <|-- Shellder
+  Shellder <|-- Cloyster
+  Pokemon <|-- Lotad
+  Lotad <|-- Lombre
+  Lombre <|-- Ludicolo
+}
+
+package lab2.moves {
+  class PoisonJab <<final>>
+  class IceBeam <<final>>
+  class Blizzard <<final>>
+  class Bubble <<final>>
+  class DazzlingGleam <<final>>
+  class FocusBlast <<final>>
+  class HydroPump <<final>>
+  class AquaRing <<final>>
+  class Rest <<final>>
+  class Swagger <<final>>
+  class Withdraw <<final>>
+  PhysicalMove <|-- PoisonJab
+  SpecialMove <|-- IceBeam
+  SpecialMove <|-- Blizzard
+  SpecialMove <|-- Bubble
+  SpecialMove <|-- DazzlingGleam
+  SpecialMove <|-- FocusBlast
+  SpecialMove <|-- HydroPump
+  StatusMove <|-- AquaRing
+  StatusMove <|-- Rest
+  StatusMove <|-- Swagger
+  StatusMove <|-- Withdraw
+}
+@enduml
